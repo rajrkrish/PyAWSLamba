@@ -1,0 +1,16 @@
+name: python-unit-test
+run-name: Evaluating ${{ github.actor }} code push
+on: [push]
+jobs:
+  test-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.7'
+      - run: |
+          python3 -m pip3 install --upgrade pip
+          pip3 install pytest
+      - name: Running pytest
+        run: pytest
