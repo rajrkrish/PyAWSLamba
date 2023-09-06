@@ -5,14 +5,13 @@ jobs:
   test-branch:
     strategy:
       matrix:
-        python-version:  3.11
         os: [ubuntu-22.04, windows-latest]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.11"
       - run: |
           python -m pip install --upgrade pip
           pip install pytest
