@@ -5,7 +5,7 @@ jobs:
   test-branch:
     strategy:
       matrix:
-        python-version:  "3.11"
+        python-version:  3.11
         os: [ubuntu-22.04, windows-latest]
     runs-on: ubuntu-latest
     steps:
